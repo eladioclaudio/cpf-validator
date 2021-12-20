@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+}
+
+.wrapper {
+    height: inherit;
+    width: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../src/assets/img/background.jpg') no-repeat center center;
+    background-size: cover;
+
+    padding: 2rem;
+
+}
+
+.container {
+    width: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    height: 50%;
+    background: rgba(0, 0, 80, .4);
+    border-radius: 2rem;
+
+    color: white;
+    align-items: center;
+}
+
+header {
+    color: white;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+form > :is(input) {
+    padding: 1.5rem 0;
+    padding-left: 1rem;
+
+    display: inline-block;
+
+    border-radius: .5rem;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+form > :is(button) {
+    border-radius: .5rem;
+    border: none;
+    padding: 1rem 0;
+    background: #6c757d;
+    color: #ced4da;
+    opacity: 1;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+.result {
+    font-size: 2.5rem;
+    background-color: gray;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 4rem;
+    border-radius: 1rem;
+}
