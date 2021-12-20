@@ -22,9 +22,9 @@ function handleCPF(inputValue) {
 
     inputValue = removeAllDifferentAsNumber(inputValue)
     inputValue = convertToArray(inputValue);
-
+    
     if(isCPF(inputValue)) return;
-
+    
     const list = inputValue.map(value => convertToNumber(value));
     handleProblem(list);
 }
@@ -51,13 +51,7 @@ function convertToNumber(inputValue) {
 }
 
 function isCPF(cpf) {
-    try {
-        if(cpf.length > 11 || cpf.length < 11) {
-            throw new Error('Incorrect CPF!');
-        }
-        return true;
-    } catch (error) {
+        if(cpf.length == 11) return false;
         console.log('Incorrect CPF!')
-        return;
-    }
+        return true;
 }
