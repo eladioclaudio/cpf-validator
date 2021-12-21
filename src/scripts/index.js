@@ -2,7 +2,6 @@
  * @author "Eládio Cláudio"
  */
 
-// 705.484.450-52
 let input;
 
 let display = document.querySelector('.result');
@@ -58,7 +57,6 @@ function handleProblem(cpf) {
     firstOutput = checkLastDigit(firstResult, calculateLastValue)
 
     newCpf.push(firstOutput);
-    // 705.484.450-52
     
     secondResult = formula(newCpf);
     secondOutput = checkLastDigit(secondResult, calculateLastValue)
