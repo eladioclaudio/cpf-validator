@@ -131,3 +131,5 @@ function isCPF(cpf) {
     console.log('Incorrect CPF!')
     return true;
 }
+
+// end
