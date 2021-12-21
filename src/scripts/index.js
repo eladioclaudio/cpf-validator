@@ -2,7 +2,6 @@
  * @author "Eládio Cláudio"
  */
 
-// 705.484.450-52
 let input;
 
 let display = document.querySelector('.result');
@@ -14,6 +13,8 @@ window.addEventListener('click', (event) => {
 
 
     if (element.classList.contains('input-area')) {
+        display.classList.remove('invalid');
+        display.classList.remove('valid');
         input = element;
     }
 
@@ -21,12 +22,12 @@ window.addEventListener('click', (event) => {
         event.preventDefault();
 
         let inputValue = input.value;
-        if(inputValue == '') {
+        if (inputValue == '') {
             alert('Empty Field');
             input.focus();
             return
         }
-        
+
         handleCPF(inputValue);
     }
 })
@@ -45,9 +46,9 @@ function handleCPF(inputValue) {
 
 function handleProblem(cpf) {
 
-    let originalCPF = [ ...cpf ].join('');
+    let originalCPF = [...cpf].join('');
     cpf = removeLastTwoDigits(cpf);
-    let newCpf = [ ...cpf ];
+    let newCpf = [...cpf];
 
     let firstOutput = 0;
     let firstResult = 0;
@@ -58,11 +59,10 @@ function handleProblem(cpf) {
     firstOutput = checkLastDigit(firstResult, calculateLastValue)
 
     newCpf.push(firstOutput);
-    // 705.484.450-52
-    
+
     secondResult = formula(newCpf);
     secondOutput = checkLastDigit(secondResult, calculateLastValue)
-    
+
     newCpf.push(secondOutput);
 
     newCpf = newCpf.join('')
@@ -71,7 +71,7 @@ function handleProblem(cpf) {
 }
 
 function handleMessage(proposition) {
-    if(proposition) {
+    if (proposition) {
         display.classList.remove('invalid');
         display.classList.add('valid');
         message.innerText = "This is a Valid Brazilian CPF";
@@ -87,7 +87,7 @@ function validate(cpf1, cpf2) {
 }
 
 function checkLastDigit(value, callback) {
-    return (callback(value) > 9) ? 0 : callback(value); 
+    return (callback(value) > 9) ? 0 : callback(value);
 }
 
 function formula(cpf) {
@@ -128,6 +128,8 @@ function isCPF(cpf) {
     input.value = '';
     input.focus();
     alert('Incorrect CPF!');
+    display.classList.remove('invalid');
+    display.classList.remove('valid');
     console.log('Incorrect CPF!')
     return true;
 }
