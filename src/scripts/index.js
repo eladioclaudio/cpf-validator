@@ -3,7 +3,6 @@
  */
 
 let input;
-
 let display = document.querySelector('.result');
 let message = document.querySelector('#message');
 
