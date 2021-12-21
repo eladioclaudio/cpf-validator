@@ -92,4 +92,16 @@ form > :is(button) {
 
     height: 4rem;
     border-radius: 1rem;
+    visibility: hidden;
+}
+
+
+.valid {
+    background-color: green;
+    visibility: initial;
+}
+
+.invalid {
+    background-color: red;
+    visibility: initial;
 }
